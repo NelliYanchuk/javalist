@@ -2,6 +2,7 @@ package dev.nyanchuk.java.list;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Week {
 
@@ -22,13 +23,21 @@ public class Week {
     }
 
     // Getter to return the days of the week
-    public List<Day> getDaysOfWeek() {
+    public void getDaysOfWeek() {
         System.out.println("\n2. The days of the week are:");
-        return week;
+        System.out.println(week);
     }
 
     // Metod to return list length
     public void getListLength() {
         System.out.println("\n3. The length of the week is: " + week.size());
+    }
+
+    // Metod to delete a day from the list
+    public void deleteDay(Scanner scanner) {
+        System.out.println("\n4. Enter a day number to remove it from the week");
+        int num = scanner.nextInt();
+        week.remove(num-1);
+        System.out.println(week);
     }
 }

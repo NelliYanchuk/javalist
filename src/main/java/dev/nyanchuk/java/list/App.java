@@ -14,18 +14,21 @@ public final class App {
         newWeek.createDayList();
 
         // Return the days of the week
-        System.out.println(newWeek.getDaysOfWeek());
+        newWeek.getDaysOfWeek();
 
         // Return the length of the list week
         newWeek.getListLength();
 
-        /* Scanner scanner = new Scanner(System.in);
-                            "\n3. To return the length of the list" +
-                            "\n4. To remove a day of the week" +
+        //Remove a day of the week
+        Scanner scanner = new Scanner(System.in);
+
+
+
+                            /* "\n4. To remove a day of the week" +
                             "\n5. To return the requested day of the week" +
                             "\n6. To return whether the requested day exists in the list" +
                             "\n7. To sort the list of days in alphabetical order" +
-                            "\n8. To clear the list");
+                            "\n8. To clear the list"); */
         
         int optioNum = scanner.nextInt();
 
