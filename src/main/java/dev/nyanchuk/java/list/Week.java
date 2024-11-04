@@ -18,11 +18,17 @@ public class Week {
         for (Day day : Day.values()) {
             week.add(day);
         }
-        System.out.println("New week is created.");
+        System.out.println("\n1. New week is created.");
     }
 
     // Getter to return the days of the week
     public List<Day> getDaysOfWeek() {
+        System.out.println("\n2. The days of the week are:");
         return week;
+    }
+
+    // Metod to return list length
+    public void getListLength() {
+        System.out.println("\n3. The length of the week is: " + week.size());
     }
 }

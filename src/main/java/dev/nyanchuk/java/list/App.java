@@ -16,6 +16,9 @@ public final class App {
         // Return the days of the week
         System.out.println(newWeek.getDaysOfWeek());
 
+        // Return the length of the list week
+        newWeek.getListLength();
+
         /* Scanner scanner = new Scanner(System.in);
                             "\n3. To return the length of the list" +
                             "\n4. To remove a day of the week" +
