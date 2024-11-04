@@ -6,18 +6,23 @@ import java.util.List;
 public class Week {
 
     // Initialization
-    private List<Day> days;
+    public List<Day> week;
 
     // Constructor
     public Week() {
-        this.days = new ArrayList<>();
-        initializeWeek();
+        week = new ArrayList<>();
     }
 
-    // Initialize the week with all days
-    private void initializeWeek() {
+    // Method to create the list of days of the week
+    public void createDayList() {
         for (Day day : Day.values()) {
-            days.add(day);
+            week.add(day);
         }
+        System.out.println("New week is created.");
+    }
+
+    // Getter to return the days of the week
+    public List<Day> getDaysOfWeek() {
+        return week;
     }
 }
