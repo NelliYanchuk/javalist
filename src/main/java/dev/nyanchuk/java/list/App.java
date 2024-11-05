@@ -16,6 +16,9 @@ public final class App {
         // Return the days of the week
         newWeek.getAllDaysOfWeek();
 
+        // Sort the days
+        newWeek.sortDayInWeek();
+
         // Return the length of the list week
         newWeek.getListLength();
 
@@ -32,10 +35,6 @@ public final class App {
 
         // Clear the list
         newWeek.clearWeek();
-
-        // Sort the days
-        newWeek.createDayList();
-        newWeek.sortDayInWeek();
 
         scanner.close();
     }
