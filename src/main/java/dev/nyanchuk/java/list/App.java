@@ -26,15 +26,16 @@ public final class App {
 
         // If requested day exists in the list
         newWeek.ifDayExists(scanner);
-        
 
-                            /*"\n6. To return whether the requested day exists in the list" +
-                            "\n7. To sort the list of days in alphabetical order" +
-                            "\n8. To clear the list");  */
-        
-        //Delete a day of the week
-        newWeek.deleteDay(scanner);
+                //Delete a day of the week
+                newWeek.deleteDay(scanner);
 
+        // Sort the days
+        newWeek.sortDayInWeek();
+
+        // Clear the list
+        newWeek.sortDayInWeek();
+        
     scanner.close();
     }
 

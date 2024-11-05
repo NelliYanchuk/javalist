@@ -1,8 +1,11 @@
 package dev.nyanchuk.java.list;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Comparator;
+
 
 public class Week {
 
@@ -50,10 +53,17 @@ public class Week {
         System.out.println("\n5. Enter a day to check if exists in the week:");
         String name = scanner.nextLine();
         for (Day day : week) {
-            if (day.equals(name)) {
+            if (day.name() == name) {
                 System.out.println("Yes, " + name + " day exists.");
             }
         }
+    }
+
+    // Metod to sort days in alphabetical order
+    public void sortDayInWeek() {
+        System.out.println("\n6. Ordered days are:");
+        Collections.sort(week, Comparator.comparing(Day::name));
+        System.out.println(week);
     }
 
     // Metod to delete a day from the list
