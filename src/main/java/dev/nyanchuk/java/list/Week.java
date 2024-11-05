@@ -33,10 +33,11 @@ public class Week {
     }
 
     // Method to sort days in alphabetical order
-    public void sortDayInWeek() {
+    public List<Day> sortDayInWeek() {
         System.out.println("\n3. Ordered days are:");
         Collections.sort(week, Comparator.comparing(Day::name));
         System.out.println(week);
+        return week;
     }
 
     // Method to return list length

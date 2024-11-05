@@ -40,8 +40,9 @@ public class WeekTest {
         assertEquals(expectedDays, actualDays);
     }
 
+    // ----- testGetDay -----
     @Test
-    public void testGetDayValidInput() {
+    public void testGetDay() {
         // Test valid number (1)
         assertEquals("Day 1 is: MONDAY", week.getDay("1"));
 
@@ -52,23 +53,29 @@ public class WeekTest {
         assertEquals("Invalid input. This is not a number.", week.getDay("k"));
     }
 
-    /* @Test
+    // ----- testSortDayInWeek -----
+    @Test
     public void testSortDayInWeek() {
-        // Sort the days alphabetically and check the order
-        week.sortDayInWeek();
-        assertEquals(
-                Arrays.asList(Day.FRIDAY, Day.MONDAY, Day.SATURDAY, Day.SUNDAY, Day.THURSDAY, Day.TUESDAY,
-                        Day.WEDNESDAY),
-                week.week,
-                "The days should be sorted in alphabetical order.");
-    } */
+        // Expected order in alphabetical sorting
+        List<Day> expectedOrder = Arrays.asList(
+            Day.FRIDAY, Day.MONDAY, Day.SATURDAY, Day.SUNDAY, 
+            Day.THURSDAY, Day.TUESDAY, Day.WEDNESDAY
+        );
 
+        // Get the sorted list from the method
+        List<Day> sortedDays = week.sortDayInWeek();
+
+        assertEquals(expectedOrder, sortedDays);
+    }
+
+    // ----- testGetListLength -----
     @Test
     public void testGetListLength() {
         // Check that the length of the week is correct
         assertEquals(7, week.getListLength());
     }
 
+    // ----- testIfDayExists -----
     @Test
     public void testIfDayExists() {
         // Test Uppercase
