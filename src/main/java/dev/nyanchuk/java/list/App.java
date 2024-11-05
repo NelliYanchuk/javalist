@@ -12,12 +12,10 @@ public final class App {
 
         // Create the list of days of the week
         newWeek.createDayList();
+        System.out.println("\nNew week is created.");
 
         // Return the days of the week
         newWeek.getAllDaysOfWeek();
-
-        // Sort the days
-        newWeek.sortDayInWeek();
 
         // Return the length of the list week
         newWeek.getListLength();
@@ -25,22 +23,35 @@ public final class App {
         Scanner scanner = new Scanner(System.in);
 
         // Get a requested day of the week
-        System.out.println("\n5. Enter a day number (1 to 7) to see its name:");
+        System.out.println("\nEnter a day number (1 to 7) to see its name:");
         String input = scanner.nextLine();
-        newWeek.getDay(input);
+        // Get the returned String
+        String dayResult = newWeek.getDay(input);
+        System.out.println(dayResult);
 
         // If requested day exists in the list
-        System.out.println("\n6. Enter a day to check if exists in the week:");
-        String name = scanner.nextLine();
-        newWeek.ifDayExists(name);
+        System.out.println("\nEnter a day to check if exists in the week:");
+        input = scanner.nextLine();
+        newWeek.ifDayExists(input);
 
-        // Delete a day of the week
-        newWeek.deleteDay(scanner);
+        // Sort the days
+        newWeek.sortDayInWeek();
 
         // Clear the list
         newWeek.clearWeek();
 
+        System.out.println("\nCreating day list once again after deleting.");
+        newWeek.createDayList();
+        newWeek.getAllDaysOfWeek();
+
+        // Delete a day of the week
+        System.out.println("\nEnter a day number to remove it from the week");
+        input = scanner.nextLine();
+        newWeek.deleteDay(input);
+
+        System.out.println("\nThanks for playing with me. See you soon!");
         scanner.close();
+
     }
 
 }

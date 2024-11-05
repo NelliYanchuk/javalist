@@ -88,19 +88,28 @@ public class WeekTest {
         assertFalse(week.ifDayExists("NEWday"), "NEWday should not exist in the week.");
     }
 
-    /* @Test
+    // ----- testDeleteDay -----
+    @Test
     public void testDeleteDay() {
-        // Test removing a day by its index and check the list's new state
-        int initialSize = week.week.size();
-        week.week.remove(Day.FRIDAY);
-        assertEquals(initialSize - 1, week.week.size(), "After deletion, the week should have one less day.");
-        assertFalse(week.week.contains(Day.FRIDAY), "FRIDAY should no longer exist in the week after deletion.");
-    } */
+        // Test deleting day 5 (FRIDAY)
+        List<Day> expectedDaysAfterDeletion = Arrays.asList(
+            Day.MONDAY, Day.TUESDAY, Day.WEDNESDAY, Day.THURSDAY, Day.SATURDAY, Day.SUNDAY
+        );
+        List<Day> result = week.deleteDay("5");
+        assertEquals(expectedDaysAfterDeletion, result);
+    
+        // Test deleting out of range
+        assertNull(week.deleteDay("8"));
+    
+        // Test string input ("yes")
+        assertNull(week.deleteDay("yes"));
+    }
 
-   /*  @Test
+    // ----- testClearWeek -----
+    @Test
     public void testClearWeek() {
-        // Clear all days and check if the list is empty
-        week.clearWeek();
-        assertTrue(week.week.isEmpty(), "The week should be empty after calling clearWeek.");
-    } */
+        List<Day> emptyList = Arrays.asList();
+        assertEquals(emptyList, week.clearWeek());
+    }
+
 }

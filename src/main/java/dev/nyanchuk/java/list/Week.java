@@ -3,7 +3,6 @@ package dev.nyanchuk.java.list;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Scanner;
 import java.util.Comparator;
 
 public class Week {
@@ -22,19 +21,18 @@ public class Week {
         for (Day day : Day.values()) {
             week.add(day);
         }
-        System.out.println("\n1. New week is created.");
     }
 
-    // Getter to return the days of the week
+    // Get all days of the week
     public List<Day> getAllDaysOfWeek() {
-        System.out.println("\n2. The days of the week are:");
+        System.out.println("\nThe days of the week are:");
         System.out.println(week);
         return week;
     }
 
     // Method to sort days in alphabetical order
     public List<Day> sortDayInWeek() {
-        System.out.println("\n3. Ordered days are:");
+        System.out.println("\nAlphabetical ordered days are:");
         Collections.sort(week, Comparator.comparing(Day::name));
         System.out.println(week);
         return week;
@@ -42,7 +40,7 @@ public class Week {
 
     // Method to return list length
     public int getListLength() {
-        System.out.println("\n4. The length of the week is: " + week.size());
+        System.out.println("\nThe length of the week is: " + week.size());
         return week.size();
     }
 
@@ -64,7 +62,7 @@ public class Week {
     public boolean ifDayExists(String name) {
         for (Day day : week) {
             if (day.name().equalsIgnoreCase(name)) {
-                System.out.println("Yes, " + name + " day exists.");
+                System.out.println("Yes, " + name + " exists.");
                 return true;
             }
         }
@@ -73,27 +71,33 @@ public class Week {
     }
 
     // Method to delete a day from the list
-    public void deleteDay(Scanner scanner) {
-        System.out.println("\n7. Enter a day number to remove it from the week");
-        String input = scanner.nextLine();
-        num = Integer.parseInt(input);
+    public List<Day> deleteDay(String input) {
 
-        if ((num >= 1) && (num <= week.size())) {
-            System.out.println(week.get(num - 1) + " is deleted.");
-            week.remove(num - 1);
-        } else {
-            System.out.println("Invalid input. Please enter a valid integer.");
+        try {
+            num = Integer.parseInt(input);
+            if ((num >= 1) && (num <= week.size())) {
+                System.out.println(week.get(num - 1) + " is deleted.");
+                week.remove(num - 1);
+                System.out.println(week);
+                return week;
+
+            } else {
+                System.out.println("Invalid input. Please enter 1 to 7.");
+                return null;
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. This is not a number.");
+            return null;
         }
 
-        System.out.println(week);
     }
 
     // Method to clear the list
-    public void clearWeek() {
-        System.out.println("\n8. Remove all from the week");
+    public List<Day> clearWeek() {
+        System.out.println("\nRemove all days from week");
         week.removeAll(week);
-        System.out.println(week);
         System.out.println("week is empty now");
+        return week;
     }
 
 }
