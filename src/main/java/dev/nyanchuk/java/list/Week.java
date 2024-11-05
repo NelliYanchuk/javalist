@@ -55,22 +55,34 @@ public class Week {
         for (Day day : week) {
             if (day.name() == name) {
                 System.out.println("Yes, " + name + " day exists.");
+                return;
             }
         }
-    }
-
-    // Metod to sort days in alphabetical order
-    public void sortDayInWeek() {
-        System.out.println("\n6. Ordered days are:");
-        Collections.sort(week, Comparator.comparing(Day::name));
-        System.out.println(week);
+        System.out.println("No, " + name + " day does not exist.");
     }
 
     // Metod to delete a day from the list
     public void deleteDay(Scanner scanner) {
-        System.out.println("\n7. Enter a day number to remove it from the week");
+        System.out.println("\n6. Enter a day number to remove it from the week");
         int num = scanner.nextInt();
         week.remove(num - 1);
         System.out.println(week);
     }
+
+    // Metod to clear the list
+    public void clearWeek() {
+        System.out.println("\n7. Remove all from the week");
+        week.removeAll(week);
+        System.out.println(week);
+        System.out.println("week is empty now");
+    }
+
+    // Metod to sort days in alphabetical order
+    public void sortDayInWeek() {
+        System.out.println("\n8. Ordered days are:");
+        Collections.sort(week, Comparator.comparing(Day::name));
+        System.out.println(week);
+    }
+
+    
 }
