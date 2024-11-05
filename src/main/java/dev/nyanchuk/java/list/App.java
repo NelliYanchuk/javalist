@@ -25,10 +25,14 @@ public final class App {
         Scanner scanner = new Scanner(System.in);
 
         // Get a requested day of the week
-        newWeek.getDay(scanner);
+        System.out.println("\n5. Enter a day number (1 to 7) to see its name:");
+        String input = scanner.nextLine();
+        newWeek.getDay(input);
 
         // If requested day exists in the list
-        newWeek.ifDayExists(scanner);
+        System.out.println("\n6. Enter a day to check if exists in the week:");
+        String name = scanner.nextLine();
+        newWeek.ifDayExists(name);
 
         // Delete a day of the week
         newWeek.deleteDay(scanner);
