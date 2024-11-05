@@ -14,33 +14,24 @@ public final class App {
         newWeek.createDayList();
 
         // Return the days of the week
-        newWeek.getDaysOfWeek();
+        newWeek.getAllDaysOfWeek();
 
         // Return the length of the list week
         newWeek.getListLength();
 
-        //Remove a day of the week
         Scanner scanner = new Scanner(System.in);
 
+        //Remove a day of the week
+        newWeek.getDay(scanner);
 
-
-                            /* "\n4. To remove a day of the week" +
-                            "\n5. To return the requested day of the week" +
-                            "\n6. To return whether the requested day exists in the list" +
+                            /*"\n6. To return whether the requested day exists in the list" +
                             "\n7. To sort the list of days in alphabetical order" +
-                            "\n8. To clear the list"); */
+                            "\n8. To clear the list");  */
         
-        int optioNum = scanner.nextInt();
+        //Delete a day of the week
+        newWeek.deleteDay(scanner);
 
-        switch(optioNum) {
-            case 1: newWeek.createDayList();
-            break; 
-            case 2: newWeek.getDaysOfWeek();
-            break;
-            default: System.out.println("\nIncorrect number. Please try again.");
-          }
-
-    scanner.close(); */
+    scanner.close();
     }
 
 }

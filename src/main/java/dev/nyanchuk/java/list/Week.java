@@ -23,7 +23,7 @@ public class Week {
     }
 
     // Getter to return the days of the week
-    public void getDaysOfWeek() {
+    public void getAllDaysOfWeek() {
         System.out.println("\n2. The days of the week are:");
         System.out.println(week);
     }
@@ -40,4 +40,17 @@ public class Week {
         week.remove(num-1);
         System.out.println(week);
     }
+
+    // Metod to get a day
+    public void getDay(Scanner scanner) {
+        System.out.println("\n5. Enter a day number (1 to 7) to see its name:");
+        int num = scanner.nextInt();
+    
+        if ((num >= 1) && (num <= week.size())) {
+            System.out.println("Day " + num + " is: " + week.get(num - 1));
+        } else {
+            System.out.println("Invalid day number.");
+        }
+    }
+    
 }
