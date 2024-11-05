@@ -33,24 +33,34 @@ public class Week {
         System.out.println("\n3. The length of the week is: " + week.size());
     }
 
-    // Metod to delete a day from the list
-    public void deleteDay(Scanner scanner) {
-        System.out.println("\n4. Enter a day number to remove it from the week");
-        int num = scanner.nextInt();
-        week.remove(num-1);
-        System.out.println(week);
-    }
-
     // Metod to get a day
     public void getDay(Scanner scanner) {
-        System.out.println("\n5. Enter a day number (1 to 7) to see its name:");
+        System.out.println("\n4. Enter a day number (1 to 7) to see its name:");
         int num = scanner.nextInt();
-    
+
         if ((num >= 1) && (num <= week.size())) {
             System.out.println("Day " + num + " is: " + week.get(num - 1));
         } else {
             System.out.println("Invalid day number.");
         }
     }
-    
+
+    // Metod to check if day exists
+    public void ifDayExists(Scanner scanner) {
+        System.out.println("\n5. Enter a day to check if exists in the week:");
+        String name = scanner.nextLine();
+        for (Day day : week) {
+            if (day.equals(name)) {
+                System.out.println("Yes, " + name + " day exists.");
+            }
+        }
+    }
+
+    // Metod to delete a day from the list
+    public void deleteDay(Scanner scanner) {
+        System.out.println("\n7. Enter a day number to remove it from the week");
+        int num = scanner.nextInt();
+        week.remove(num - 1);
+        System.out.println(week);
+    }
 }

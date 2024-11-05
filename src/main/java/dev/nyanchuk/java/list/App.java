@@ -21,8 +21,12 @@ public final class App {
 
         Scanner scanner = new Scanner(System.in);
 
-        //Remove a day of the week
+        // Get a requested day of the week
         newWeek.getDay(scanner);
+
+        // If requested day exists in the list
+        newWeek.ifDayExists(scanner);
+        
 
                             /*"\n6. To return whether the requested day exists in the list" +
                             "\n7. To sort the list of days in alphabetical order" +
